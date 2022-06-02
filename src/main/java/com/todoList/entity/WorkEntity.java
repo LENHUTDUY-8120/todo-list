@@ -1,5 +1,7 @@
 package com.todoList.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,10 +19,16 @@ public class WorkEntity extends BaseEntity{
 	private String content;
 	
 	@Column
-	private int priority = 0;
+	private double priority = 0d;
 	
 	@Column
 	private String status = "pending";
+	
+	@Column 
+	private String searchKey;
+	
+	@Column
+	private Date dayWork;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id", foreignKey = @ForeignKey(name="CATEGORY_ID_FK"))
@@ -46,11 +54,11 @@ public class WorkEntity extends BaseEntity{
 		this.content = content;
 	}
 
-	public int getPriority() {
+	public double getPriority() {
 		return priority;
 	}
 
-	public void setPriority(int priority) {
+	public void setPriority(double priority) {
 		this.priority = priority;
 	}
 
@@ -76,6 +84,22 @@ public class WorkEntity extends BaseEntity{
 
 	public void setGroup(GroupEntity group) {
 		this.group = group;
+	}
+
+	public String getSearchKey() {
+		return searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+
+	public Date getDayWork() {
+		return dayWork;
+	}
+
+	public void setDayWork(Date dayWork) {
+		this.dayWork = dayWork;
 	}
 
 }

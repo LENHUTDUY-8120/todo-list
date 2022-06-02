@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.todoList.request.CategoryReq;
-import com.todoList.response.CategoryAllRes;
 import com.todoList.response.CategoryRes;
 import com.todoList.service.CategoryService;
 import com.todoList.util.MapperUtil;
@@ -29,8 +28,8 @@ public class CategoryApi {
 	private CategoryService categoryService;
 	
 	@GetMapping
-	public List<CategoryAllRes> getAllCategory(){
-		return categoryService.getAllCategory();
+	public List<CategoryRes> getAllCategory(){
+		return MapperUtil.mapAll(categoryService.getAllCategory(), CategoryRes.class);
 	}
 	
 	@PostMapping

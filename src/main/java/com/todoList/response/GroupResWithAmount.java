@@ -2,35 +2,50 @@ package com.todoList.response;
 
 import java.util.Date;
 
-public class CategoryRes {
-
+public class GroupResWithAmount {
 	private Long id;
-	private String name;
+	private String title;
 	private Date createDate;
 	private Date modifiedDate;
-	
-	public String getName() {
-		return name;
+	private int amount;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
+
 	public Date getCreateDate() {
 		return createDate;
 	}
+
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
+
 	public Date getModifiedDate() {
 		return modifiedDate;
 	}
+
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 }

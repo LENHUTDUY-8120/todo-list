@@ -31,7 +31,7 @@ public abstract class BaseEntity {
 	@Column(nullable = false, updatable = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date modifiedBy;
+	private Date modifiedDate;
 
 	public Long getId() {
 		return id;
@@ -49,11 +49,12 @@ public abstract class BaseEntity {
 		this.createDate = createDate;
 	}
 
-	public Date getModifiedBy() {
-		return modifiedBy;
+	public Date getModifiedDate() {
+		return modifiedDate;
 	}
 
-	public void setModifiedBy(Date modifiedBy) {
-		this.modifiedBy = modifiedBy;
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
 	}
+
 }
